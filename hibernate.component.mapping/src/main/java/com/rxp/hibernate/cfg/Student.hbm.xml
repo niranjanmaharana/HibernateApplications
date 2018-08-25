@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.rxp.hibernate.domain.Student" table="student">
+		<id name="rollNo">
+			<generator class="increment"/>
+		</id>
+		<property name="studentName"/>
+		<property name="course"/>
+		<component name="address" class="com.rxp.hibernate.domain.Address">
+			<property name="houseNo"/>
+			<property name="district"/>
+			<property name="state"/>
+			<property name="pinNo"/>
+		</component>
+	</class>
+</hibernate-mapping>
